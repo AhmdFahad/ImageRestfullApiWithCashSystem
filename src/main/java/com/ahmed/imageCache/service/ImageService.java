@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ImageService {
@@ -34,6 +33,6 @@ public class ImageService {
     }
 
     public Image getImage(Long id) {
-        return imageRepository.findById(id);
+        return imageRepository.findById(id).orElseThrow(() -> new ResourceAccessException("User not found") );
     }
 }

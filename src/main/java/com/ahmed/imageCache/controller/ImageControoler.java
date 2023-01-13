@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController@RequestMapping("v1/api/")
+@RestController@RequestMapping("/v1/api/")
 
 
 public class ImageControoler {
@@ -17,7 +17,7 @@ public class ImageControoler {
         this.imageService = imageService;
     }
 
-    @PostMapping("image")
+    @PostMapping(value="image" )
     public Image saveImage(@RequestBody Image image){
         return  imageService.saveImage(image);
     }
@@ -27,7 +27,7 @@ public class ImageControoler {
     }
 
     @PutMapping("image/{id}")
-    public void upadteIamge(@RequestBody Image image,@PathVariable(name = "id")Long id){
+    public void updateImage(@RequestBody Image image, @PathVariable(name = "id")Long id){
         imageService.updateImage(image,id);
     }
 
