@@ -5,6 +5,7 @@ import com.ahmed.imageCache.model.dao.ImageRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,5 +27,13 @@ public class ImageService {
         uImage.setName(image.getName());
         uImage.setImageData(image.getImageData());
         imageRepository.save(image);
+    }
+
+    public List<Image> getAllImage() {
+        return imageRepository.findAll();
+    }
+
+    public Image getImage(Long id) {
+        return imageRepository.findById(id);
     }
 }
