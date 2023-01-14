@@ -2,6 +2,7 @@ package com.ahmed.imageCache.controller;
 
 import com.ahmed.imageCache.model.Image;
 import com.ahmed.imageCache.service.ImageService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
